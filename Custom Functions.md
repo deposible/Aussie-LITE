@@ -157,4 +157,3 @@ end
 
 WIRE.UIDrag(game.CoreGui.WIREUI.Frame)
 ```
-```
