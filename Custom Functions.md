@@ -95,9 +95,9 @@ while task.wait(0.1) do
 end
 ```
 
-## WIRE.Click(table OR <void>)
+## WIRE.Click(table OR Blank)
 ```lua
-<function> WIRE.Click(type: Int OR <void>)
+<function> WIRE.Click(type: table OR <void>)
 ```
 ```lua
 -- Example 1
@@ -110,4 +110,51 @@ WIRE.Click({version = 0, delay = 0}) -- Version represents either through clicki
 ```lua
 -- Example 3
 WIRE.Click({version = 1, delay = 0}) -- Only 2 Versions 0 & 1
+```
+
+## WIRE.Keypress(table)
+```lua
+<function> WIRE.Keypress(type: table)
+```
+```lua
+-- Example 1
+WIRE.Keypress({delay = 0 --[[The delay between Down & Up || How Long to Hold the key for]], key = Enum.KeyCode.E})
+```
+
+## WIRE.WalkTo(position, forcestop)
+```lua
+<function> WIRE.WalkTo(type: Vector3, type: boolean)
+```
+```lua
+-- Example 1
+WIRE.WalkTo(Vector3.new(0, 5, 0), true) -- Force stopping will make it forciably stop any other calls youve made to WIRE.WalkTo
+```
+```lua
+-- Example 2
+WIRE.WalkTo(Vector3.new(0, 5, 0), false) -- Wont force stop any other calls to WIRE.WalkTo
+```
+
+## WIRE.GrabNearChildren(Instance, Max Distance)
+```lua
+<function> WIRE.GrabNearChildren(type: Instance, type: Int)
+```
+```lua
+-- Example 1
+local NearestChildren = WIRE.GrabNearChildren(workspace, 50) -- Max Distance is 50 and workspace is gonna grab all children to grab anything within the 50 range
+--[[ It will return a table of all the Instances Collected  & Prevents Lag :)]]
+
+for _, a in pairs(NearestChildren) do
+ print(a.Name, a.Parent, typeof(a))
+end
+```
+
+## WIRE.UIDrag(GUI)
+```lua
+<function> WIRE.UIDrag(type: Instance)
+```
+```lua
+-- Example
+
+WIRE.UIDrag(game.CoreGui.WIREUI.Frame)
+```
 ```
