@@ -157,3 +157,13 @@ end
 
 WIRE.UIDrag(game.CoreGui.WIREUI.Frame)
 ```
+
+## WIRE.HideUI(UI)
+```lua
+<function> WIRE.HideUI(type: Instance)
+```
+```
+-- Example
+
+WIRE.HideUI(game.CoreGui.WIREUI)
+```
