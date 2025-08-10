@@ -167,3 +167,12 @@ WIRE.UIDrag(game.CoreGui.WIREUI.Frame)
 
 WIRE.HideUI(game.CoreGui.WIREUI)
 ```
+
+## WIRE.ServerHop()
+```lua
+<function> WIRE.ServerHop(<void>)
+```
+```lua
+-- Example
+WIRE.ServerHop()
+```
