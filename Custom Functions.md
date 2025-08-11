@@ -243,3 +243,23 @@ if Vehicle then
  VehicleMainPart.CFrame = CFrame.new(0, 0, 0)
 end
 ```
+
+## WIRE.FormatTime(Int)
+```lua
+<function> WIRE.FormatTime(type: Integer) -- will return in this format: 0M | 0H | 0D"
+```
+```lua
+-- Example
+local Running = 0
+
+task.spawn(function()
+ while task.wait(60) do
+  Running += 60
+ end
+end)
+
+while task.wait(180) do
+  local Time = WIRE.FormatTime(Running)
+  warn('Script has been running for: ' .. Time)
+end
+```
