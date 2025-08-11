@@ -162,7 +162,7 @@ WIRE.UIDrag(game.CoreGui.WIREUI.Frame)
 ```lua
 <function> WIRE.HideUI(type: Instance)
 ```
-```
+```lua
 -- Example
 
 WIRE.HideUI(game.CoreGui.WIREUI)
@@ -175,4 +175,71 @@ WIRE.HideUI(game.CoreGui.WIREUI)
 ```lua
 -- Example
 WIRE.ServerHop()
+```
+
+## WIRE.Attribute(Instance, Attribute)
+```lua
+<function> WIRE.Attribute(type: Instance, type: string) -- Will return a Boolean & what the attribute is
+```
+```lua
+-- Example 1
+
+if WIRE.Attribute(game.Players.LocalPlayer.Character, "SetWalkSpeed") and WIRE.Attribute(game.Players.LocalPlayer.Character, "SetWalkSpeed") == 16 then
+  game.Players.LocalPlayer.Character:SetAttribute("SetWalkSpeed", 16)
+end
+```
+```lua
+-- Example 2
+if WIRE.Attribute(game.Players, "GameStarted") then
+ print'Start Moving'
+end
+```
+
+## WIRE.EquipTool(string or Tool)
+```lua
+<function> WIRE.EquipTool(type: string or type: Tool) -- Returns boolean if Successful or not & Checks if its already equipped too
+```
+```lua
+-- Example 1
+
+if WIRE.EquipTool("Pickaxe") then
+  print'Equipped'
+end
+```
+```lua
+-- Example 2
+
+if WIRE.EquipTool(game.ReplicatedStorage.Items.Balloon) then
+ print'Holy Moley Vulnerable ass system 💀 #NaturalDisasterSurvival'
+else
+ print('No Instance Found')
+end
+```
+
+## WIRE.CheckForTool(player, String)
+```lua
+<function> WIRE.CheckForTool(type: Player, type: String)
+```
+```lua
+-- Example
+
+if WIRE.CheckForTool(game.Players.LocalPlayer, "Knife") then
+ return 'You have the Knife'
+end
+```
+
+## WIRE.GrabCurrentVehicle()
+```lua
+<function> WIRE.GrabCurrentVehicle(<void>)
+```
+```lua
+-- Example
+
+local Vehicle = WIRE.GrabCurrentVehicle()
+
+if Vehicle then
+ local VehicleMainPart = Vehicle.PrimaryPart
+
+ VehicleMainPart.CFrame = CFrame.new(0, 0, 0)
+end
 ```
